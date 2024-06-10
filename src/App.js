@@ -9,18 +9,22 @@ import { useDispatch, useSelector } from 'react-redux'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import ForgotPassword from './pages/ForgotPassword'
-import { userSingInByToken } from './reducer/authFeature/authSlices'
+import { userSingInByToken, userSingOut } from './reducer/authFeature/authSlices'
+import Cookies from 'js-cookie'
 
 const App = () => {
   // const navigate = useDispatch();
   const { user } = useSelector(state => state.auth);
   const dispatch = useDispatch();
 
+  
+
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token && !user) {
       dispatch(userSingInByToken());
     }
+    
   })
 
   return (

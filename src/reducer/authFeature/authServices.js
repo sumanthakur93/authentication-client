@@ -5,7 +5,7 @@ import { toast } from 'react-toastify'
 
 const signIn = async({props}) => {
     try{
-        console.log(props);
+      //   console.log(props);
          const { email, password, username } = props
          
          const response = await api.post(API_URL.login, 
@@ -64,7 +64,7 @@ const signOut = async() => {
       
       const response = await api.get(API_URL.logout)
 
-      console.log(response);
+      // console.log(response);
       toast.success(response.data.message);
       localStorage.removeItem('token');
 
@@ -89,6 +89,7 @@ const signInByToken = async() => {
       // if token will get expire then first remove the token and redirect the page to signin
        localStorage.removeItem('token');
       //  window.location.href = '/signin'
+      console.log(err);
      }
 }
 
@@ -112,7 +113,8 @@ export const forgetPassword = async({props})=>{
             
      }
      catch(err){
-          console.log(err);
+         //  console.log(err);
+          toast.error(err.response.data.message);
      }
 }
 
