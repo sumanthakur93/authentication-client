@@ -1,0 +1,61 @@
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90.3vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f5af19, #f12711);
+    color: white;
+    text-align: center;
+  
+    .logged-in, .logged-out {
+      max-width: 600px;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    .thank-you {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      animation: fadeIn 2s ease-in-out infinite;
+    }
+  
+    .user-info {
+      font-size: 1.2rem;
+  
+      p {
+        margin: 0.5rem 0;
+      }
+    }
+  
+    .logged-out {
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+  
+      button {
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 5px;
+        background-color: #ff6f61;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #e85e53;
+        }
+      }
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
